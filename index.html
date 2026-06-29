@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michel Bessani · Professor & Pesquisador · UFMG</title>
+  <meta name="description" content="Professor no Departamento de Engenharia Elétrica da UFMG. Pesquisa em confiabilidade de sistemas de potência, redes bayesianas, otimização e resiliência de infraestruturas críticas.">
+  <meta name="author" content="Michel Bessani">
+  <meta property="og:title" content="Michel Bessani · Professor & Pesquisador · UFMG">
+  <meta property="og:description" content="Portfólio acadêmico — pesquisa, projetos, publicações e ensino em Engenharia Elétrica na UFMG.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <!-- Font Geist via CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Geist',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+      -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+      color:#171717;background:#fff;line-height:1.5
+    }
+    img{max-width:100%;display:block}
+    a{color:#0072f5;text-decoration:none;transition:color .15s}
+    a:hover{color:#0043ce}
+
+    h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1;letter-spacing:-0.04em;font-weight:600}
+    h2{font-size:clamp(1.5rem,3.5vw,2.25rem);line-height:1.2;letter-spacing:-0.03em;margin-bottom:1rem;font-weight:600}
+    h3{font-size:1.25rem;line-height:1.3;letter-spacing:-0.02em;margin-bottom:.5rem;font-weight:600}
+    h4{font-size:1rem;margin-bottom:.375rem;font-weight:600}
+    p{font-size:1rem;color:#4d4d4d;line-height:1.6}
+    .caption{font-size:.75rem;color:#808080}
+    .mono{font-family:'Geist Mono',monospace;font-size:.8125rem}
+
+    .container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+
+    /* Language toggle */
+    .lang-toggle{display:flex;gap:.25rem;align-items:center}
+    .lang-toggle button{
+      background:none;border:none;font-family:'Geist Mono',monospace;
+      font-size:.75rem;font-weight:500;padding:.25rem .5rem;border-radius:4px;
+      cursor:pointer;color:#808080;transition:all .15s
+    }
+    .lang-toggle button.active{color:#171717;background:#ebebeb}
+    .lang-toggle button:hover{color:#171717}
+    .lang-toggle .sep{color:#d0d0d0;font-size:.75rem}
+
+    /* Nav */
+    nav{
+      position:sticky;top:0;background:rgba(255,255,255,.92);
+      backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+      z-index:100;box-shadow:0 0 0 1px rgba(0,0,0,.06)
+    }
+    nav .container{display:flex;align-items:center;justify-content:space-between;height:56px}
+    nav .logo{font-size:1rem;font-weight:600;color:#171717;letter-spacing:-.02em}
+    nav .logo span{color:#808080;font-weight:400}
+    nav .nav-links{display:flex;gap:.125rem;align-items:center}
+    nav .nav-links a{
+      font-size:.875rem;font-weight:500;color:#4d4d4d;
+      padding:.375rem .75rem;border-radius:6px;transition:all .15s
+    }
+    nav .nav-links a:hover{color:#171717;background:#f5f5f5}
+    .mobile-menu-btn{
+      display:none;background:none;border:none;
+      font-size:1.25rem;cursor:pointer;color:#171717;padding:.5rem
+    }
+    @media(max-width:768px){
+      nav .nav-links{display:none}
+      .mobile-menu-btn{display:block}
+      nav .nav-links.open{
+        display:flex;flex-direction:column;position:absolute;top:56px;
+        left:0;right:0;background:#fff;
+        box-shadow:0 4px 12px rgba(0,0,0,.08);padding:.5rem 1.5rem 1rem;gap:.25rem
+      }
+    }
+
+    /* Hero */
+    .hero{padding:5rem 0 3.5rem;text-align:center}
+    .hero-avatar{
+      width:120px;height:120px;border-radius:50%;
+      margin:0 auto 1.5rem;overflow:hidden;
+      box-shadow:0 0 0 1px rgba(0,0,0,.06)
+    }
+    .hero-avatar img{width:100%;height:100%;object-fit:cover}
+    .hero h1{margin-bottom:.5rem}
+    .hero .subtitle{font-size:1.125rem;color:#666;line-height:1.5;max-width:640px;margin:0 auto .5rem}
+    .hero .affiliation{font-size:.875rem;color:#808080}
+    .hero .affiliation a{color:#666}
+    .hero .hero-actions{margin-top:2rem;display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:.375rem;
+      font-family:'Geist',sans-serif;font-size:.875rem;font-weight:500;
+      padding:.5rem 1.25rem;border-radius:6px;border:none;
+      cursor:pointer;transition:all .15s;text-decoration:none
+    }
+    .btn-primary{background:#171717;color:#fff}
+    .btn-primary:hover{background:#000;color:#fff}
+    .btn-ghost{background:#fff;color:#171717;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+    .btn-ghost:hover{box-shadow:0 0 0 1px rgba(0,0,0,.15);background:#fafafa}
+
+    /* Sections */
+    section{padding:4.5rem 0}
+    section+section{box-shadow:0 -1px 0 0 rgba(0,0,0,.06)}
+    .section-label{
+      font-family:'Geist Mono',monospace;font-size:.75rem;font-weight:500;
+      text-transform:uppercase;letter-spacing:.05em;color:#808080;margin-bottom:.5rem
+    }
+    .section-intro{max-width:720px;margin-bottom:2rem}
+    .badge{
+      display:inline-block;background:#f0f4ff;color:#0043ce;
+      font-size:.75rem;font-weight:500;padding:.125rem .5rem;
+      border-radius:9999px;margin-right:.25rem;margin-bottom:.25rem
+    }
+
+    /* Research */
+    .areas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
+    .area-card{
+      padding:1.25rem;border-radius:8px;
+      box-shadow:0 0 0 1px rgba(0,0,0,.08),0 2px 2px rgba(0,0,0,.04);
+      transition:box-shadow .2s
+    }
+    .area-card:hover{box-shadow:0 0 0 1px rgba(0,0,0,.08),0 2px 2px rgba(0,0,0,.04),0 8px 8px -8px rgba(0,0,0,.08)}
+    .area-card p{font-size:.875rem;color:#666;line-height:1.5}
+
+    /* Projects */
+    .project-card{
+      padding:1.5rem;border-radius:8px;
+      box-shadow:0 0 0 1px rgba(0,0,0,.08),0 2px 2px rgba(0,0,0,.04);
+      margin-bottom:1rem;transition:box-shadow .2s
+    }
+    .project-card:hover{box-shadow:0 0 0 1px rgba(0,0,0,.08),0 2px 2px rgba(0,0,0,.04),0 8px 8px -8px rgba(0,0,0,.08)}
+    .project-card .tag{
+      display:inline-block;background:#ebf5ff;color:#0068d6;
+      font-size:.75rem;font-weight:500;padding:.125rem .5rem;
+      border-radius:9999px;margin-bottom:.5rem
+    }
+    .project-card p{font-size:.875rem;color:#666;line-height:1.5}
+    .project-card .period{font-size:.75rem;color:#aaa}
+
+    /* Publications */
+    .pub-list{list-style:none}
+    .pub-item{padding:1rem 0;box-shadow:0 -1px 0 0 rgba(0,0,0,.06)}
+    .pub-item:first-child{box-shadow:none}
+    .pub-item .authors{font-size:.8125rem;color:#808080}
+    .pub-item .title{font-size:.9375rem;font-weight:500;color:#171717;margin:.125rem 0}
+    .pub-item .journal{font-size:.8125rem;color:#4d4d4d}
+    .year-badge{
+      display:inline-block;background:#f0f0f0;color:#666;
+      font-size:.75rem;font-weight:500;padding:.125rem .375rem;
+      border-radius:4px;margin-right:.5rem
+    }
+
+    /* Teaching */
+    .course-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+    .course-card{
+      padding:1.25rem;border-radius:8px;
+      box-shadow:0 0 0 1px rgba(0,0,0,.08),0 2px 2px rgba(0,0,0,.04)
+    }
+    .course-card p{font-size:.8125rem;color:#666}
+
+    /* Stats */
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1rem}
+    .stat-card{text-align:center;padding:1.25rem;border-radius:8px;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+    .stat-card .number{
+      font-family:'Geist Mono',monospace;font-size:2rem;font-weight:600;
+      color:#171717;line-height:1.1
+    }
+    .stat-card .label{font-size:.8125rem;color:#808080;margin-top:.25rem}
+
+    /* Links */
+    .links-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.75rem}
+    .link-card{
+      display:flex;align-items:center;gap:.75rem;
+      padding:1rem 1.25rem;border-radius:8px;
+      box-shadow:0 0 0 1px rgba(0,0,0,.08);
+      transition:box-shadow .15s;color:#171717;font-size:.875rem;font-weight:500
+    }
+    .link-card:hover{box-shadow:0 0 0 1px rgba(0,0,0,.15);color:#171717}
+
+    /* Contact */
+    .contact-grid{
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem
+    }
+    .contact-item{
+      padding:1.25rem;border-radius:8px;box-shadow:0 0 0 1px rgba(0,0,0,.08)
+    }
+    .contact-item .label{font-size:.75rem;color:#808080;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.25rem}
+    .contact-item .value{font-size:.9375rem;color:#171717}
+
+    /* Footer */
+    footer{padding:2.5rem 0;text-align:center;box-shadow:0 -1px 0 0 rgba(0,0,0,.06)}
+    footer p{font-size:.8125rem;color:#808080}
+
+    /* Language */
+    [data-lang="pt"] .lang-en{display:none}
+    [data-lang="en"] .lang-pt{display:none}
+
+    /* Responsive */
+    @media(max-width:600px){
+      .hero{padding:3rem 0 2rem}
+      section{padding:3rem 0}
+      .areas-grid,.course-list,.stats-grid,.links-grid,.contact-grid{grid-template-columns:1fr}
+    }
+
+    /* Animations */
+    .fade-in{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+    .fade-in.visible{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <a href="#hero" class="logo">MB <span class="lang-pt">· Pesquisa</span><span class="lang-en">· Research</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#sobre" class="lang-pt">Sobre</a><a href="#sobre" class="lang-en">About</a>
+        <a href="#pesquisa" class="lang-pt">Pesquisa</a><a href="#pesquisa" class="lang-en">Research</a>
+        <a href="#projetos" class="lang-pt">Projetos</a><a href="#projetos" class="lang-en">Projects</a>
+        <a href="#publicacoes" class="lang-pt">Publicações</a><a href="#publicacoes" class="lang-en">Publications</a>
+        <a href="#ensino" class="lang-pt">Ensino</a><a href="#ensino" class="lang-en">Teaching</a>
+        <a href="#contato" class="lang-pt">Contato</a><a href="#contato" class="lang-en">Contact</a>
+        <div class="lang-toggle">
+          <span class="sep">/</span>
+          <button onclick="setLang('pt')" id="langPt" class="active">PT</button>
+          <button onclick="setLang('en')" id="langEn">EN</button>
+        </div>
+      </div>
+      <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="hero-avatar">
+        <img src="./foto.jpg" alt="Michel Bessani">
+      </div>
+      <h1>Michel Bessani</h1>
+      <p class="subtitle lang-pt">Professor e Pesquisador · Engenharia Elétrica · Otimização sob Incerteza · Inteligência Artificial Bayesiana</p>
+      <p class="subtitle lang-en">Professor and Researcher · Electrical Engineering · Optimization under Uncertainty · Bayesian AI</p>
+      <p class="affiliation">
+        <a href="https://dee.ufmg.br" target="_blank">DEE · UFMG</a> ·
+        <a href="https://orcslab.github.io" target="_blank">ORCS Lab</a>
+      </p>
+      <div class="hero-actions">
+        <a href="#contato" class="btn btn-primary lang-pt">📬 Entrar em contato</a>
+        <a href="#contato" class="btn btn-primary lang-en">📬 Get in touch</a>
+        <a href="http://lattes.cnpq.br/9450846955939545" target="_blank" class="btn btn-ghost">Currículo Lattes</a>
+        <a href="https://scholar.google.com.br/citations?user=btaJnpEAAAAJ" target="_blank" class="btn btn-ghost">Google Scholar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="sobre">
+    <div class="container">
+      <p class="section-label lang-pt">Sobre</p>
+      <p class="section-label lang-en">About</p>
+      <h2>Michel Bessani, D.Sc.</h2>
+      <div class="section-intro">
+        <p class="lang-pt" style="margin-bottom:1rem;">
+          Professor no <a href="https://dee.ufmg.br" target="_blank">Departamento de Engenharia Elétrica</a> da
+          <a href="https://www.ufmg.br" target="_blank">Universidade Federal de Minas Gerais</a> desde agosto de 2018.
+          Graduado (2012), Mestre (2015) e Doutor (2018) em Engenharia Elétrica pela
+          <a href="https://www.eesc.usp.br" target="_blank">Escola de Engenharia de São Carlos — Universidade de São Paulo</a>
+          (EESC-USP). Atualmente é <strong>colíder</strong> do <a href="https://orcslab.github.io" target="_blank">Grupo de Pesquisa Operacional e Sistemas Complexos</a>
+          (Operations Research and Complex Systems, ORCS) e membro do Grupo de Otimização e Projeto Assistido por Computador
+          (<a href="http://www.dee.ufmg.br/gopac" target="_blank">GOPAC</a>).
+          Membro da <strong>Sociedade Brasileira de Inteligência Artificial (SBIA)</strong>.
+        </p>
+        <p class="lang-en" style="margin-bottom:1rem;">
+          Professor at the <a href="https://dee.ufmg.br" target="_blank">Electrical Engineering Department</a> of
+          <a href="https://www.ufmg.br/en" target="_blank">UFMG</a> since August 2018.
+          Bachelor's (2012), Master's (2015), and Ph.D. (2018) in Electrical Engineering from the
+          <a href="https://www.eesc.usp.br" target="_blank">School of Engineering of São Carlos — University of São Paulo</a>
+          (EESC-USP). He is currently <strong>co-leader</strong> of the
+          <a href="https://orcslab.github.io" target="_blank">Operations Research and Complex Systems (ORCS)</a> research group
+          and a member of the Computer-Aided Design and Optimization Group (<a href="http://www.dee.ufmg.br/gopac" target="_blank">GOPAC</a>).
+          Member of the <strong>Brazilian Society for Artificial Intelligence (SBIA)</strong>.
+        </p>
+        <p class="lang-pt" style="margin-bottom:1rem;">
+          Sua pesquisa situa-se na interseção entre <strong>Otimização sob Incerteza</strong> e
+          <strong>Inteligência Artificial Bayesiana</strong> para o suporte à decisão em sistemas críticos.
+          Desenvolve técnicas e algoritmos com dados reais para criar modelos que preveem eventos, evitam falhas,
+          melhoram o desempenho, a resiliência e a confiabilidade e reduzem custos e riscos.
+          A pesquisa tem aplicação em <strong>energia, saúde e logística</strong>.
+        </p>
+        <p class="lang-en" style="margin-bottom:1rem;">
+          His research lies at the intersection of <strong>Optimization under Uncertainty</strong> and
+          <strong>Bayesian Artificial Intelligence</strong> for decision support in critical systems.
+          He develops techniques and algorithms with real data to create models that predict events, avoid failures,
+          improve performance, resilience, and reliability, and reduce costs and risks.
+          His research has applications in <strong>energy, health, and logistics</strong>.
+        </p>
+        <p class="lang-pt">
+          Atua com projetos de pesquisa, desenvolvimento e consultoria em diferentes áreas,
+          fornecendo soluções customizadas, suporte científico e treinamento personalizado.
+        </p>
+        <p class="lang-en">
+          Works with research, development, and consulting projects across different areas,
+          providing customized solutions, scientific support, and personalized training.
+        </p>
+      </div>
+
+      <div style="margin-top:1.5rem;margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:.5rem">
+        <span class="badge">🔬 Inteligência Artificial Bayesiana</span>
+        <span class="badge">⚡ Otimização sob Incerteza</span>
+        <span class="badge">🏭 Confiabilidade de Sistemas</span>
+        <span class="badge">🌱 Transição Energética</span>
+        <span class="badge">🏥 Saúde e Tecnologia</span>
+        <span class="badge">🇧🇷 SBIA</span>
+      </div>
+
+      <div class="stats-grid fade-in">
+        <div class="stat-card"><div class="number">28</div><div class="label lang-pt">Artigos Publicados</div><div class="label lang-en">Journal Articles</div></div>
+        <div class="stat-card"><div class="number">52</div><div class="label lang-pt">Trabalhos em Eventos</div><div class="label lang-en">Conference Papers</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="pesquisa">
+    <div class="container">
+      <p class="section-label lang-pt">Pesquisa</p>
+      <p class="section-label lang-en">Research</p>
+      <h2 class="lang-pt">Áreas de Investigação</h2>
+      <h2 class="lang-en">Research Areas</h2>
+      <p class="section-intro lang-pt">
+        Na interseção entre Otimização sob Incerteza e Inteligência Artificial Bayesiana para suporte à decisão em sistemas críticos.
+      </p>
+      <p class="section-intro lang-en">
+        At the intersection of Optimization under Uncertainty and Bayesian Artificial Intelligence for decision support in critical systems.
+      </p>
+      <div class="areas-grid fade-in">
+        <div class="area-card">
+          <h4 class="lang-pt">⚡ Confiabilidade de Sistemas Elétricos</h4>
+          <h4 class="lang-en">⚡ Power System Reliability</h4>
+          <p class="lang-pt">Modelagem probabilística de falhas, resiliência climática, análise estatística de dados de reparo, predição de taxas de falha.</p>
+          <p class="lang-en">Probabilistic failure modeling, climate resilience, statistical repair data analysis, failure rate prediction.</p>
+        </div>
+        <div class="area-card">
+          <h4 class="lang-pt">🧠 Redes Bayesianas e Inferência</h4>
+          <h4 class="lang-en">🧠 Bayesian Networks & Inference</h4>
+          <p class="lang-pt">Aprendizado estrutural com AG multiagente, thresholds analíticos, BNs dinâmicas, fusão de informações, imputation em séries temporais.</p>
+          <p class="lang-en">Structural learning via multi-agent GA, analytical thresholds, dynamic BNs, information fusion, time-series imputation.</p>
+        </div>
+        <div class="area-card">
+          <h4 class="lang-pt">🎯 Otimização Multiobjetivo</h4>
+          <h4 class="lang-en">🎯 Multi-Objective Optimization</h4>
+          <p class="lang-pt">Alocação de dispositivos de proteção, otimização de rotas de patrulha, swarm intelligence para restauração.</p>
+          <p class="lang-en">Protective device placement, patrol route optimization, swarm intelligence for restoration.</p>
+        </div>
+        <div class="area-card">
+          <h4 class="lang-pt">🔗 Sistemas Ciber-Físicos</h4>
+          <h4 class="lang-en">🔗 Cyber-Physical Systems</h4>
+          <p class="lang-pt">Impacto do fator humano na confiabilidade, fusão Bayesiana de sensores, estimação de estado com PMUs e SCADA.</p>
+          <p class="lang-en">Human factor impact on reliability, Bayesian sensor fusion, state estimation with PMUs and SCADA.</p>
+        </div>
+        <div class="area-card">
+          <h4 class="lang-pt">🌱 Transição Energética</h4>
+          <h4 class="lang-en">🌱 Energy Transition</h4>
+          <p class="lang-pt">Previsão de emissões de CO₂, gestão de microrredes com biogás, armazenamento de energia (BESS), integração renovável.</p>
+          <p class="lang-en">CO₂ emissions forecasting, microgrid management with biogas, energy storage (BESS), renewable integration.</p>
+        </div>
+        <div class="area-card">
+          <h4 class="lang-pt">🏥 Aplicações em Saúde</h4>
+          <h4 class="lang-en">🏥 Health Applications</h4>
+          <p class="lang-pt">ML para risco de fibrilação atrial, sistemas de suporte à decisão clínica, análise de dados de saúde do trabalhador.</p>
+          <p class="lang-en">ML for atrial fibrillation risk, clinical decision support systems, worker health data analysis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projetos">
+    <div class="container">
+      <p class="section-label lang-pt">Projetos</p>
+      <p class="section-label lang-en">Projects</p>
+      <h2 class="lang-pt">Projetos de P&amp;D e Extensão</h2>
+      <h2 class="lang-en">R&amp;D and Extension Projects</h2>
+
+      <h3 class="lang-pt" style="margin-bottom:1rem">🔬 Projetos de Pesquisa</h3>
+      <h3 class="lang-en" style="margin-bottom:1rem">🔬 Research Projects</h3>
+      <div class="fade-in">
+
+        <div class="project-card">
+          <span class="tag lang-pt">Pesquisa · Internacional</span>
+          <span class="tag lang-en">Research · International</span>
+          <span class="period">2024–presente</span>
+          <h3 class="lang-pt">IRP Maxwell — Cooperação Internacional</h3>
+          <h3 class="lang-en">IRP Maxwell — International Cooperation</h3>
+          <p class="lang-pt">Convênio de cooperação científica entre instituições brasileiras (USP, UFMG, UFSC, CEFET) e francesas. Desenvolvimento de modelos de otimização sob incerteza para sistemas energéticos.</p>
+          <p class="lang-en">Scientific cooperation agreement between Brazilian (USP, UFMG, UFSC, CEFET) and French institutions. Development of optimization under uncertainty models for energy systems.</p>
+        </div>
+
+        <div class="project-card">
+          <span class="tag lang-pt">Pesquisa · CNPq / FAPEMIG</span>
+          <span class="tag lang-en">Research · CNPq / FAPEMIG</span>
+          <span class="period">2022–2024</span>
+          <h3 class="lang-pt">Predição Probabilística da Resiliência</h3>
+          <h3 class="lang-en">Probabilistic Resilience Prediction</h3>
+          <p class="lang-pt">Avaliação da resiliência de sistemas de distribuição frente a eventos severos: modelagem de taxas de falha, duração de interrupções e estratégias de restauração.</p>
+          <p class="lang-en">Resilience assessment of distribution systems under severe events: failure rate modeling, interruption duration analysis, and restoration strategies.</p>
+        </div>
+
+        <div class="project-card">
+          <span class="tag lang-pt">Pesquisa · CNPq/MCTI</span>
+          <span class="tag lang-en">Research · CNPq/MCTI</span>
+          <span class="period">2021–2025</span>
+          <h3 class="lang-pt">Ferramentas Integradas para Otimização Multiobjetivo</h3>
+          <h3 class="lang-en">Integrated Tools for Multi-Objective Optimization</h3>
+          <p class="lang-pt">Arcabouço automatizado de técnicas de otimização e tomada de decisão assistida, incluindo métodos multiobjetivo e preferências multicritério.</p>
+          <p class="lang-en">Automated framework for optimization and assisted decision-making, including multi-objective methods and multi-criteria preferences.</p>
+        </div>
+
+        <div class="project-card">
+          <span class="tag lang-pt">Pesquisa · UFMG</span>
+          <span class="tag lang-en">Research · UFMG</span>
+          <span class="period">2019–2020</span>
+          <h3 class="lang-pt">Resiliência sob Condições Climáticas Extremas</h3>
+          <h3 class="lang-en">Resilience Under Extreme Weather</h3>
+          <p class="lang-pt">Investigação de fatores relacionados com a resiliência de sistemas de distribuição de energia: confiabilidade, robustez, manutenibilidade e disponibilidade de recursos.</p>
+          <p class="lang-en">Investigation of factors related to power distribution system resilience: reliability, robustness, maintainability, and resource availability.</p>
+        </div>
+
+        <div class="project-card">
+          <span class="tag lang-pt">Pesquisa · UFMG</span>
+          <span class="tag lang-en">Research · UFMG</span>
+          <span class="period">2025–presente</span>
+          <h3 class="lang-pt">Estratégias Computacionais para Planejamento Energético (ODS)</h3>
+          <h3 class="lang-en">Computational Strategies for Energy Planning (SDG)</h3>
+          <p class="lang-pt">Modelagem e integração dos Objetivos de Desenvolvimento Sustentável (ODS) em problemas de planejamento energético para a América do Sul.</p>
+          <p class="lang-en">Modeling and integration of Sustainable Development Goals (SDGs) into energy planning problems for South America.</p>
+        </div>
+
+      </div>
+
+      <h3 class="lang-pt" style="margin:2rem 0 1rem">📚 Projetos de Extensão</h3>
+      <h3 class="lang-en" style="margin:2rem 0 1rem">📚 Extension Projects</h3>
+      <div class="fade-in">
+
+        <div class="project-card">
+          <span class="tag lang-pt">Extensão · Virtual</span>
+          <span class="tag lang-en">Extension · Virtual</span>
+          <span class="period">2024–2025</span>
+          <h3 class="lang-pt">Otimização de Serviços de Oftalmologia — Virtù</h3>
+          <h3 class="lang-en">Ophthalmology Service Optimization — Virtù</h3>
+          <p class="lang-pt">Modelagem, simulação e otimização do fluxo de atendimento clínico, redimensionamento de instalações e implementação de sistema de monitoramento em tempo real.</p>
+          <p class="lang-en">Modeling, simulation, and optimization of clinical workflow, facility resizing, and implementation of a real-time monitoring system.</p>
+        </div>
+
+        <div class="project-card">
+          <span class="tag lang-pt">Extensão · UFMG</span>
+          <span class="tag lang-en">Extension · UFMG</span>
+          <span class="period">2025–presente</span>
+          <h3 class="lang-pt">Engenharia de Sistemas — Formação Profissional</h3>
+          <h3 class="lang-en">Systems Engineering — Professional Training</h3>
+          <p class="lang-pt">Curso de extensão sobre conceitos, processos e práticas da Engenharia de Sistemas para profissionais e estudantes.</p>
+          <p class="lang-en">Extension course on Systems Engineering concepts, processes, and practices for professionals and students.</p>
+        </div>
+
+        <div class="project-card">
+          <span class="tag lang-pt">Extensão · UFMG</span>
+          <span class="tag lang-en">Extension · UFMG</span>
+          <span class="period">2025–presente</span>
+          <h3 class="lang-pt">Otimização e Modelos de Linguagem para Aplicações Industriais</h3>
+          <h3 class="lang-en">Optimization &amp; Language Models for Industrial Applications</h3>
+          <p class="lang-pt">Curso sobre Otimização (OT) e Inteligência Artificial (IA) para aplicações industriais: conceitos, modelos, métodos e aplicações.</p>
+          <p class="lang-en">Course on Optimization (OT) and AI for industrial applications: concepts, models, methods, and applications.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publicacoes">
+    <div class="container">
+      <p class="section-label lang-pt">Publicações</p>
+      <p class="section-label lang-en">Publications</p>
+      <h2 class="lang-pt">Publicações Selecionadas</h2>
+      <h2 class="lang-en">Selected Publications</h2>
+      <p class="section-intro caption lang-pt">
+        28 artigos publicados · 52 trabalhos em eventos ·
+        <a href="https://scholar.google.com.br/citations?user=btaJnpEAAAAJ" target="_blank">Google Scholar</a> ·
+        <a href="http://lattes.cnpq.br/9450846955939545" target="_blank">Lattes</a>
+      </p>
+      <p class="section-intro caption lang-en">
+        28 journal articles · 52 conference papers ·
+        <a href="https://scholar.google.com.br/citations?user=btaJnpEAAAAJ" target="_blank">Google Scholar</a> ·
+        <a href="http://lattes.cnpq.br/9450846955939545" target="_blank">Lattes</a>
+      </p>
+      <ul class="pub-list fade-in">
+        <li class="pub-item">
+          <span class="year-badge">2026</span>
+          <span class="authors"><strong>M. Bessani</strong>, L.S. Batista, F. Campelo, E.G. Carrano</span>
+          <div class="title">Hybrid simulation-optimization approach for power distribution systems resilience assessment</div>
+          <span class="journal">Reliability Engineering &amp; System Safety, 272, 112570</span>
+        </li>
+        <li class="pub-item">
+          <span class="year-badge">2026</span>
+          <span class="authors">M.V. Freitas, L.S. Batista, <strong>M. Bessani</strong></span>
+          <div class="title">Dynamic Framework for Crew Dispatch Optimization in Power Distribution Fault Inspection</div>
+          <span class="journal">Reliability Engineering &amp; System Safety, 272, 112527</span>
+        </li>
+        <li class="pub-item">
+          <span class="year-badge">2025</span>
+          <span class="authors">J.P.A.F. Campos, I.G. Machado, <strong>M. Bessani</strong></span>
+          <div class="title">Multi-Agent Genetic Algorithm for Bayesian Networks Structural Learning</div>
+          <span class="journal">Knowledge-Based Systems, 310, 113025</span>
+        </li>
+        <li class="pub-item">
+          <span class="year-badge">2023</span>
+          <span class="authors">M.I. Santos, A. Maravilha, <strong>M. Bessani</strong>, W. Uturbey, L.S. Batista</span>
+          <div class="title">A model for optimal energy management in a microgrid using biogas</div>
+          <span class="journal">Evolutionary Intelligence, 17(3), 1677–1695</span>
+        </li>
+        <li class="pub-item">
+          <span class="year-badge">2023</span>
+          <span class="authors">T. Santos, <strong>M. Bessani</strong>, I. Nunes da Silva</span>
+          <div class="title">Evolving Dynamic Bayesian Networks for CO₂ Emissions Forecasting in Multi-Source Power Generation Systems</div>
+          <span class="journal">IEEE Latin America Transactions, 21(9), 1022–1031</span>
+        </li>
+        <li class="pub-item">
+          <span class="year-badge">2022</span>
+          <span class="authors">J.A.D. Massignan, J.B.A. London Jr., <strong>M. Bessani</strong>, C.D. Maciel, R.Z. Fannucchi, V. Miranda</span>
+          <div class="title">Bayesian Inference Approach for Information Fusion in Distribution System State Estimation</div>
+          <span class="journal">IEEE Transactions on Smart Grid, 13(1), 526–540</span>
+        </li>
+        <li class="pub-item">
+          <span class="year-badge">2020</span>
+          <span class="authors"><strong>M. Bessani</strong>, J.A.D. Massignan, T.M.O. Santos, J.B.A. London Jr., C.D. Maciel</span>
+          <div class="title">Multiple Households Very Short-Term Load Forecasting Using Bayesian Networks</div>
+          <span class="journal">Electric Power Systems Research, 189, 106733</span>
+        </li>
+        <li class="pub-item">
+          <span class="year-badge">2019</span>
+          <span class="authors"><strong>M. Bessani</strong>, J.A.D. Massignan, R.Z. Fanucchi, M.H.M. Camillo, J.B.A. London Jr., A.C.B. Delbem, C.D. Maciel</span>
+          <div class="title">Probabilistic Assessment of Power Distribution Systems Resilience Under Extreme Weather</div>
+          <span class="journal">IEEE Systems Journal, 13(2), 1747–1756</span>
+        </li>
+        <li class="pub-item">
+          <span class="year-badge">2019</span>
+          <span class="authors">T.J. Gross, <strong>M. Bessani</strong>, W. Darwin Jr., R.B. Araújo, F.A.C. Vale, C.D. Maciel</span>
+          <div class="title">An Analytical Threshold for Combining Bayesian Networks</div>
+          <span class="journal">Knowledge-Based Systems, 175, 36–49</span>
+        </li>
+        <li class="pub-item">
+          <span class="year-badge">2018</span>
+          <span class="authors">T.J. Gross, R.B. Araújo, F.A.C. Vale, <strong>M. Bessani</strong>, C.D. Maciel</span>
+          <div class="title">Dependence between cognitive impairment and metabolic syndrome applied to a Brazilian elderly dataset</div>
+          <span class="journal">Artificial Intelligence in Medicine, 90, 53–60</span>
+        </li>
+      </ul>
+      <p style="margin-top:1rem">
+        <a href="https://scholar.google.com.br/citations?user=btaJnpEAAAAJ" target="_blank" class="btn btn-ghost lang-pt">→ Ver todas no Google Scholar</a>
+        <a href="https://scholar.google.com.br/citations?user=btaJnpEAAAAJ" target="_blank" class="btn btn-ghost lang-en">→ View all on Google Scholar</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- TEACHING -->
+  <section id="ensino">
+    <div class="container">
+      <p class="section-label lang-pt">Ensino</p>
+      <p class="section-label lang-en">Teaching</p>
+      <h2 class="lang-pt">Atuação na UFMG</h2>
+      <h2 class="lang-en">Teaching at UFMG</h2>
+      <p class="section-intro lang-pt">Disciplinas ministradas nos cursos de Graduação e Pós-Graduação do <a href="https://dee.ufmg.br" target="_blank">DEE</a>.</p>
+      <p class="section-intro lang-en">Courses taught at Undergraduate and Graduate levels at <a href="https://dee.ufmg.br" target="_blank">DEE</a>.</p>
+      <div class="course-list fade-in">
+        <div class="course-card">
+          <h4>Confiabilidade de Sistemas (EEE 017)</h4>
+          <p class="lang-pt">Graduação · Eng. de Sistemas</p>
+          <p class="lang-en">Undergraduate · Systems Engineering</p>
+        </div>
+        <div class="course-card">
+          <h4>Análise de Circuitos Elétricos II (ELE 065)</h4>
+          <p class="lang-pt">Graduação · Eng. de Sistemas / Controle e Automação</p>
+          <p class="lang-en">Undergraduate · Systems Engineering / Control &amp; Automation</p>
+        </div>
+        <div class="course-card">
+          <h4>Otimização Não Linear (ELE 077)</h4>
+          <p class="lang-pt">Graduação · Eng. de Sistemas</p>
+          <p class="lang-en">Undergraduate · Systems Engineering</p>
+        </div>
+        <div class="course-card">
+          <h4>Eletrotécnica (ELE 063)</h4>
+          <p class="lang-pt">Graduação · Eng. Mecânica</p>
+          <p class="lang-en">Undergraduate · Mechanical Engineering</p>
+        </div>
+        <div class="course-card">
+          <h4>Planejamento e Análise de Experimentos (EEE 933)</h4>
+          <p class="lang-pt">Pós-Graduação · SCT / Eng. Elétrica</p>
+          <p class="lang-en">Graduate · SCT / Electrical Engineering</p>
+        </div>
+        <div class="course-card">
+          <h4>Computação Evolucionária (EEE 882)</h4>
+          <p class="lang-pt">Pós-Graduação · Eng. Elétrica</p>
+          <p class="lang-en">Graduate · Electrical Engineering</p>
+        </div>
+        <div class="course-card">
+          <h4>Trabalho de Conclusão de Curso II (EEE 019)</h4>
+          <p class="lang-pt">Graduação · Eng. de Sistemas</p>
+          <p class="lang-en">Undergraduate · Systems Engineering</p>
+        </div>
+        <div class="course-card">
+          <h4>Estágio Supervisionado (EEE 020)</h4>
+          <p class="lang-pt">Graduação · Eng. de Sistemas</p>
+          <p class="lang-en">Undergraduate · Systems Engineering</p>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem">
+        <h3 class="lang-pt">Orientações</h3>
+        <h3 class="lang-en">Supervision</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-top:1rem">
+          <div class="course-card" style="background:#fafafa">
+            <h4 class="lang-pt">✅ Concluídas</h4>
+            <h4 class="lang-en">✅ Completed</h4>
+            <p class="lang-pt"><strong>2</strong> Doutorado (coorientação)</p>
+            <p class="lang-en"><strong>2</strong> Doctoral (co-supervision)</p>
+            <p class="lang-pt"><strong>4</strong> Mestrado (orientador principal)</p>
+            <p class="lang-en"><strong>4</strong> Master's (main advisor)</p>
+            <p class="lang-pt"><strong>14+</strong> TCC · Iniciação Científica</p>
+            <p class="lang-en"><strong>14+</strong> Final projects · Scientific initiation</p>
+          </div>
+          <div class="course-card" style="background:#fafafa">
+            <h4 class="lang-pt">🔄 Em Andamento</h4>
+            <h4 class="lang-en">🔄 In Progress</h4>
+            <p class="lang-pt"><strong>2</strong> Doutorado (orientador principal)</p>
+            <p class="lang-en"><strong>2</strong> Doctoral (main advisor)</p>
+            <p class="lang-pt"><strong>6</strong> Mestrado (orientador principal)</p>
+            <p class="lang-en"><strong>6</strong> Master's (main advisor)</p>
+            <p class="lang-pt"><strong>3+</strong> TCC · Iniciação Científica</p>
+            <p class="lang-en"><strong>3+</strong> Final projects · Scientific initiation</p>
+          </div>
+        </div>
+        <p style="margin-top:1rem">
+          <span class="badge">🏛️ UFMG</span>
+          <span class="badge">⚡ Eng. Elétrica</span>
+          <span class="badge">🔧 Eng. de Sistemas</span>
+          <span class="badge">🤖 Controle e Automação</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKS -->
+  <section id="links">
+    <div class="container">
+      <p class="section-label lang-pt">Links</p>
+      <p class="section-label lang-en">Links</p>
+      <h2 class="lang-pt">Links Externos</h2>
+      <h2 class="lang-en">External Links</h2>
+      <div class="links-grid fade-in">
+        <a href="http://lattes.cnpq.br/9450846955939545" target="_blank" class="link-card">🎓 Currículo Lattes</a>
+        <a href="https://scholar.google.com.br/citations?user=btaJnpEAAAAJ" target="_blank" class="link-card">📚 Google Scholar</a>
+        <a href="https://linkedin.com/in/michelbessani" target="_blank" class="link-card">💼 LinkedIn</a>
+        <a href="https://orcslab.github.io" target="_blank" class="link-card">🧪 ORCS Lab</a>
+        <a href="https://dee.ufmg.br" target="_blank" class="link-card">🏫 DEE UFMG</a>
+        <a href="https://www.researchgate.net/profile/Michel-Bessani" target="_blank" class="link-card">🔬 ResearchGate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contato">
+    <div class="container">
+      <p class="section-label lang-pt">Contato</p>
+      <p class="section-label lang-en">Contact</p>
+      <h2 class="lang-pt">Vamos Conversar</h2>
+      <h2 class="lang-en">Let's Talk</h2>
+      <p class="section-intro lang-pt">Interessado em colaboração acadêmica, projetos de P&amp;D ou parcerias institucionais?</p>
+      <p class="section-intro lang-en">Interested in academic collaboration, R&amp;D projects, or institutional partnerships?</p>
+      <div class="contact-grid fade-in">
+        <div class="contact-item">
+          <div class="label">E-mail</div>
+          <div class="value"><a href="mailto:mbessani@ufmg.br">mbessani@ufmg.br</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="label lang-pt">Departamento</div>
+          <div class="label lang-en">Department</div>
+          <div class="value">Engenharia Elétrica — UFMG</div>
+        </div>
+        <div class="contact-item">
+          <div class="label lang-pt">Localização</div>
+          <div class="label lang-en">Location</div>
+          <div class="value">Belo Horizonte, MG · Brasil</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p class="lang-pt">© 2026 Michel Bessani · UFMG</p>
+      <p class="lang-en">© 2026 Michel Bessani · UFMG</p>
+      <p class="caption" style="margin-top:.5rem">
+        <span class="lang-pt">Design inspirado no Vercel Geist System</span>
+        <span class="lang-en">Design inspired by Vercel's Geist System</span>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang){
+      document.documentElement.setAttribute('data-lang',lang);
+      document.getElementById('langPt').classList.toggle('active',lang==='pt');
+      document.getElementById('langEn').classList.toggle('active',lang==='en');
+      try{localStorage.setItem('site-lang',lang)}catch(e){}
+    }
+    try{const s=localStorage.getItem('site-lang');if(s==='en'||s==='pt')setLang(s)}catch(e){}
+    function toggleMenu(){document.getElementById('navLinks').classList.toggle('open')}
+    document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+    const obs=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
+    document.querySelectorAll('.fade-in').forEach(e=>obs.observe(e));
+  </script>
+</body>
+</html>
