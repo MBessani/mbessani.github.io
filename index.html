@@ -7,7 +7,7 @@
   <meta name="description" content="Professor no Departamento de Engenharia Elétrica da UFMG. Pesquisa em confiabilidade de sistemas de potência, redes bayesianas, otimização e resiliência de infraestruturas críticas.">
   <meta name="author" content="Michel Bessani">
   <meta property="og:title" content="Michel Bessani · Professor & Pesquisador · UFMG">
-  <meta property="og:description" content="Portfólio acadêmico — pesquisa, projetos, publicações e ensino nas Engenharias de Controle e Automação, Elétrica e de Sistemas na UFMG.">
+  <meta property="og:description" content="Portfólio acadêmico — pesquisa, projetos, publicações e ensino em Engenharia Elétrica na UFMG.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -208,6 +208,11 @@
     /* Animations */
     .fade-in{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
     .fade-in.visible{opacity:1;transform:translateY(0)}
+
+    /* Visitor counter */
+    .visitor-badge{display:none;margin-top:.75rem;font-size:.75rem;color:#888;animation:fadeIn .6s ease}
+    .visitor-badge.visible{display:block}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
   </style>
 </head>
 <body>
@@ -706,6 +711,10 @@
         <span class="lang-pt">Design inspirado no Vercel Geist System</span>
         <span class="lang-en">Design inspired by Vercel's Geist System</span>
       </p>
+      <div id="visitor-badge" class="visitor-badge" aria-hidden="true">
+        <span class="lang-pt">👥 Mais de <span id="visitor-count">0</span> visitas</span>
+        <span class="lang-en">👥 Over <span id="visitor-count-en">0</span> visits</span>
+      </div>
     </div>
   </footer>
 
@@ -721,6 +730,24 @@
     document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
     const obs=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
     document.querySelectorAll('.fade-in').forEach(e=>obs.observe(e));
+
+    // Visitor counter (hidden until 130 visits)
+    const THRESHOLD = 130;
+    const COUNT_KEY = 'mbessani.github.io';
+    const COUNT_NS = 'visitors';
+    fetch(`https://api.countapi.xyz/hit/${COUNT_KEY}/${COUNT_NS}`)
+      .then(r=>r.json())
+      .then(d=>{
+        const count = d.value;
+        document.getElementById('visitor-count').textContent = count;
+        document.getElementById('visitor-count-en').textContent = count;
+        if(count >= THRESHOLD){
+          const badge = document.getElementById('visitor-badge');
+          badge.classList.add('visible');
+          badge.setAttribute('aria-hidden','false');
+        }
+      })
+      .catch(()=>{}); // silently fail
   </script>
 </body>
 </html>
