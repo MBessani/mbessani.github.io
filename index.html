@@ -733,12 +733,11 @@
 
     // Visitor counter (hidden until 130 visits)
     const THRESHOLD = 130;
-    const COUNT_KEY = 'mbessani.github.io';
-    const COUNT_NS = 'visitors';
-    fetch(`https://api.countapi.xyz/hit/${COUNT_KEY}/${COUNT_NS}`)
+
+    fetch(`https://api.counterapi.dev/v1/mbessani.github.io/visitors/up`)
       .then(r=>r.json())
       .then(d=>{
-        const count = d.value;
+        const count = d.count;
         document.getElementById('visitor-count').textContent = count;
         document.getElementById('visitor-count-en').textContent = count;
         if(count >= THRESHOLD){
