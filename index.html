@@ -733,22 +733,23 @@
     const obs=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
     document.querySelectorAll('.fade-in').forEach(e=>obs.observe(e));
 
-    // Visitor counter (hidden until 130 visits)
+    // Visitor counter (hidden until 130 visits) — CounterAPI v2
     const THRESHOLD = 130;
+    const API_BASE = 'https://api.counterapi.dev/v2/michel-bessanis-team-4638/pageview-githubio';
+    const API_KEY = 'ut_u8yjBrEDCWGL1zH2eh6jIy6MH6Pci4yDTfDFusli';
 
-    fetch(`https://api.counterapi.dev/v1/mbessani.github.io/visitors/up`)
-      .then(r=>r.json())
-      .then(d=>{
-        const count = d.count;
+    fetch(`${API_BASE}/up`, { headers: { 'Authorization': `Bearer ${API_KEY}` } })
+      .then(r => r.json())
+      .then(d => {
+        const count = d.data.up_count;
         document.getElementById('visitor-count').textContent = count;
         document.getElementById('visitor-count-en').textContent = count;
-        if(count >= THRESHOLD){
-          const badge = document.getElementById('visitor-badge');
-          badge.classList.add('visible');
-          badge.setAttribute('aria-hidden','false');
+        if (count >= THRESHOLD) {
+          document.getElementById('visitor-badge').classList.add('visible');
+          document.getElementById('visitor-badge').setAttribute('aria-hidden', 'false');
         }
       })
-      .catch(()=>{}); // silently fail
+      .catch(() => {});
   </script>
 </body>
 </html>
