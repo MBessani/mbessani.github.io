@@ -297,6 +297,14 @@
     [data-theme="dark"] .dark-toggle:hover{border-color:rgba(255,255,255,.2);color:#f5f5f5}
     [data-theme="dark"] .btn-ghost{color:#e5e5e5;border-color:rgba(255,255,255,.12)}
     [data-theme="dark"] .btn-ghost:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2)}
+    [data-theme="dark"] .lang-toggle button{color:#737373}
+    [data-theme="dark"] .lang-toggle button.active{color:#f5f5f5;background:rgba(255,255,255,.08)}
+    [data-theme="dark"] .lang-toggle .sep{color:#525252}
+    [data-theme="dark"] .cw-status.active{background:rgba(22,101,52,.2);color:#4ade80}
+    [data-theme="dark"] .cw-status.planning{background:rgba(146,64,14,.2);color:#fbbf24}
+    [data-theme="dark"] .hero .tagline{color:#5b9bf5}
+    [data-theme="dark"] .btn-primary{background:#f5f5f5;color:#0a0a0a}
+    [data-theme="dark"] .btn-primary:hover{background:#fff;color:#0a0a0a}
   </style>
 </head>
 <body>
@@ -332,8 +340,8 @@
       <h1>Michel Bessani</h1>
       <p class="subtitle lang-pt">Professor e Pesquisador · Engenharia Elétrica · Otimização sob Incerteza · Inteligência Artificial Bayesiana</p>
       <p class="subtitle lang-en">Professor and Researcher · Electrical Engineering · Optimization under Uncertainty · Bayesian AI</p>
-      <p class="tagline lang-pt">Construindo sistemas resilientes sob incerteza</p>
-      <p class="tagline lang-en">Building resilient systems under uncertainty</p>
+      <p class="tagline lang-pt">Otimizando sistemas e prevendo resultados sob incertezas</p>
+      <p class="tagline lang-en">Optimizing systems and predicting outcomes under uncertainty</p>
       <p class="affiliation">
         <a href="https://dee.ufmg.br" target="_blank">DEE · UFMG</a> ·
         <a href="https://orcslab.github.io" target="_blank">ORCS Lab</a>
@@ -367,18 +375,18 @@
           <div class="cw-status active">● Ativo</div>
         </div>
         <div class="cw-card">
-          <div class="cw-title lang-pt">Redes Bayesianas para Saúde do Trabalhador</div>
-          <div class="cw-title lang-en">Bayesian Networks for Worker Health</div>
-          <div class="cw-desc lang-pt">Previsão de risco de doença coronária usando redes bayesianas e dados de exposição ocupacional (projeto Petrobras/ANP).</div>
-          <div class="cw-desc lang-en">Coronary artery disease risk prediction using Bayesian networks and occupational exposure data (Petrobras/ANP project).</div>
+          <div class="cw-title lang-pt">Redes Bayesianas para Tarefas de Saúde</div>
+          <div class="cw-title lang-en">Bayesian Networks for Health Tasks</div>
+          <div class="cw-desc lang-pt">Aplicação de redes bayesianas para previsão e suporte à decisão em problemas de saúde, incluindo classificação de risco e diagnóstico assistido.</div>
+          <div class="cw-desc lang-en">Application of Bayesian networks for prediction and decision support in health problems, including risk classification and assisted diagnosis.</div>
           <div class="cw-status active">● Ativo</div>
         </div>
         <div class="cw-card">
-          <div class="cw-title lang-pt">Planejamento Energético com ODS</div>
-          <div class="cw-title lang-en">Energy Planning with SDGs</div>
-          <div class="cw-desc lang-pt">Integração de Objetivos de Desenvolvimento Sustentável em modelos de planejamento de sistemas energéticos.</div>
-          <div class="cw-desc lang-en">Integrating Sustainable Development Goals into energy system planning models.</div>
-          <div class="cw-status planning">◌ Planejamento</div>
+          <div class="cw-title lang-pt">Investigação das interrelações entre os ODS</div>
+          <div class="cw-title lang-en">Investigating Interrelations Among SDGs</div>
+          <div class="cw-desc lang-pt">Mapeamento e modelagem das interdependências entre Objetivos de Desenvolvimento Sustentável para apoio ao planejamento energético.</div>
+          <div class="cw-desc lang-en">Mapping and modeling interdependencies among Sustainable Development Goals to support energy planning.</div>
+          <div class="cw-status active">● Ativo</div>
         </div>
       </div>
     </div>
@@ -400,6 +408,7 @@
           (Operations Research and Complex Systems, ORCS) e membro do Grupo de Otimização e Projeto Assistido por Computador
           (<a href="http://www.dee.ufmg.br/gopac" target="_blank">GOPAC</a>).
           Membro da <strong>Sociedade Brasileira de Inteligência Artificial (SBIA)</strong>.
+          <strong>Bolsista Produtividade C</strong> do <a href="https://www.gov.br/cnpq" target="_blank">CNPq</a>.
           Membro permanente do <a href="https://www.ppgee.ufmg.br/" target="_blank">PPGEE</a> na linha de pesquisa em <strong>Otimização</strong>.
         </p>
         <p class="lang-en" style="margin-bottom:1rem;">
@@ -411,6 +420,7 @@
           <a href="https://orcslab.github.io" target="_blank">Operations Research and Complex Systems (ORCS)</a> research group
           and a member of the Computer-Aided Design and Optimization Group (<a href="http://www.dee.ufmg.br/gopac" target="_blank">GOPAC</a>).
           Member of the <strong>Brazilian Society for Artificial Intelligence (SBIA)</strong>.
+          <strong>CNPq Productivity Fellow (Level C)</strong>.
           Permanent member of <a href="https://www.ppgee.ufmg.br/" target="_blank">PPGEE</a> in the <strong>Optimization</strong> research line.
         </p>
         <p class="lang-pt" style="margin-bottom:1rem;">
@@ -452,8 +462,8 @@
         <ul>
           <li class="lang-pt">2 vagas de Doutorado (PPGEE — Otimização)</li>
           <li class="lang-en">2 Ph.D. positions (PPGEE — Optimization)</li>
-          <li class="lang-pt">6 vagas de Mestrado (PPGEE — Otimização)</li>
-          <li class="lang-en">6 M.Sc. positions (PPGEE — Optimization)</li>
+          <li class="lang-pt">2 vagas de Mestrado (PPGEE — Otimização)</li>
+          <li class="lang-en">2 M.Sc. positions (PPGEE — Optimization)</li>
           <li class="lang-pt">Iniciação Científica e TCC — entre em contato</li>
           <li class="lang-en">Undergraduate research — get in touch</li>
         </ul>
@@ -501,8 +511,8 @@
         <div class="area-card">
           <h4 class="lang-pt">🔗 Sistemas Ciber-Físicos</h4>
           <h4 class="lang-en">🔗 Cyber-Physical Systems</h4>
-          <p class="lang-pt">Impacto do fator humano na confiabilidade, fusão Bayesiana de sensores, estimação de estado com PMUs e SCADA.</p>
-          <p class="lang-en">Human factor impact on reliability, Bayesian sensor fusion, state estimation with PMUs and SCADA.</p>
+          <p class="lang-pt">Impacto do fator humano na confiabilidade, fusão Bayesiana de sensores.</p>
+          <p class="lang-en">Human factor impact on reliability, Bayesian sensor fusion.</p>
         </div>
         <div class="area-card">
           <h4 class="lang-pt">🌱 Transição Energética</h4>
@@ -513,8 +523,8 @@
         <div class="area-card">
           <h4 class="lang-pt">🏥 Aplicações em Saúde</h4>
           <h4 class="lang-en">🏥 Health Applications</h4>
-          <p class="lang-pt">ML para risco de fibrilação atrial, sistemas de suporte à decisão clínica, análise de dados de saúde do trabalhador.</p>
-          <p class="lang-en">ML for atrial fibrillation risk, clinical decision support systems, worker health data analysis.</p>
+          <p class="lang-pt">ML para risco de fibrilação atrial, sistemas de suporte à decisão clínica, análise de dados de saúde.</p>
+          <p class="lang-en">ML for atrial fibrillation risk, clinical decision support systems, health data analysis.</p>
         </div>
       </div>
     </div>
@@ -525,11 +535,9 @@
     <div class="container">
       <p class="section-label lang-pt">Projetos</p>
       <p class="section-label lang-en">Projects</p>
-      <h2 class="lang-pt">Projetos de P&amp;D e Extensão</h2>
-      <h2 class="lang-en">R&amp;D and Extension Projects</h2>
 
-      <h3 class="lang-pt" style="margin-bottom:1rem">🔬 Projetos de Pesquisa</h3>
-      <h3 class="lang-en" style="margin-bottom:1rem">🔬 Research Projects</h3>
+      <h2 class="lang-pt" style="font-size:1.5rem;margin-bottom:1rem">🔬 Projetos de Pesquisa</h2>
+      <h2 class="lang-en" style="font-size:1.5rem;margin-bottom:1rem">🔬 Research Projects</h2>
       <div class="fade-in">
 
         <div class="project-card">
@@ -584,8 +592,8 @@
 
       </div>
 
-      <h3 class="lang-pt" style="margin:2rem 0 1rem">📚 Projetos de Extensão</h3>
-      <h3 class="lang-en" style="margin:2rem 0 1rem">📚 Extension Projects</h3>
+      <h2 class="lang-pt" style="font-size:1.5rem;margin:2rem 0 1rem">📚 Projetos de Extensão</h2>
+      <h2 class="lang-en" style="font-size:1.5rem;margin:2rem 0 1rem">📚 Extension Projects</h2>
       <div class="fade-in">
 
         <div class="project-card">
@@ -618,6 +626,16 @@
           <p class="lang-en">Course on Optimization (OT) and AI for industrial applications: concepts, models, methods, and applications.</p>
         </div>
 
+        <div class="project-card">
+          <span class="tag lang-pt">Extensão · Consultoria</span>
+          <span class="tag lang-en">Extension · Consulting</span>
+          <span class="period">2025–presente</span>
+          <h3 class="lang-pt">Consultoria em Modelagem e Otimização do Planejamento da Produção</h3>
+          <h3 class="lang-en">Consulting on Modeling and Optimization of Production Planning</h3>
+          <p class="lang-pt">Orientação técnico-científica, fornecendo conhecimento especializado para auxiliar na formulação matemática e na definição da abordagem e do motor de otimização para um problema de planejamento da produção de aciaria e laminação, e oferecendo uma visão crítica das alternativas para futuras melhorias ao final do serviço.</p>
+          <p class="lang-en">Technical-scientific guidance, providing specialized knowledge to assist in the mathematical formulation and definition of the approach and optimization engine for a steelmaking and rolling production planning problem, and offering a critical view of alternatives for future improvements at the end of the engagement.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -644,61 +662,61 @@
           <span class="year-badge">2026</span>
           <span class="authors"><strong>M. Bessani</strong>, L.S. Batista, F. Campelo, E.G. Carrano</span>
           <div class="title">Hybrid simulation-optimization approach for power distribution systems resilience assessment</div>
-          <span class="journal">Reliability Engineering &amp; System Safety, 272, 112570</span>
+          <span class="journal">Reliability Engineering &amp; System Safety, 272, 112570 · <a href="https://doi.org/10.1016/j.ress.2026.112570" target="_blank">DOI</a></span>
         </li>
         <li class="pub-item">
           <span class="year-badge">2026</span>
           <span class="authors">M.V. Freitas, L.S. Batista, <strong>M. Bessani</strong></span>
           <div class="title">Dynamic Framework for Crew Dispatch Optimization in Power Distribution Fault Inspection</div>
-          <span class="journal">Reliability Engineering &amp; System Safety, 272, 112527</span>
+          <span class="journal">Reliability Engineering &amp; System Safety, 272, 112527 · <a href="https://doi.org/10.1016/j.ress.2026.112527" target="_blank">DOI</a></span>
         </li>
         <li class="pub-item">
           <span class="year-badge">2025</span>
           <span class="authors">J.P.A.F. Campos, I.G. Machado, <strong>M. Bessani</strong></span>
           <div class="title">Multi-Agent Genetic Algorithm for Bayesian Networks Structural Learning</div>
-          <span class="journal">Knowledge-Based Systems, 310, 113025</span>
+          <span class="journal">Knowledge-Based Systems, 310, 113025 · <a href="https://doi.org/10.1016/j.knosys.2025.113025" target="_blank">DOI</a></span>
         </li>
         <li class="pub-item">
           <span class="year-badge">2023</span>
           <span class="authors">M.I. Santos, A. Maravilha, <strong>M. Bessani</strong>, W. Uturbey, L.S. Batista</span>
           <div class="title">A model for optimal energy management in a microgrid using biogas</div>
-          <span class="journal">Evolutionary Intelligence, 17(3), 1677–1695</span>
+          <span class="journal">Evolutionary Intelligence, 17(3), 1677–1695 · <a href="https://doi.org/10.1007/s12065-023-00857-9" target="_blank">DOI</a></span>
         </li>
         <li class="pub-item">
           <span class="year-badge">2023</span>
           <span class="authors">T. Santos, <strong>M. Bessani</strong>, I. Nunes da Silva</span>
           <div class="title">Evolving Dynamic Bayesian Networks for CO₂ Emissions Forecasting in Multi-Source Power Generation Systems</div>
-          <span class="journal">IEEE Latin America Transactions, 21(9), 1022–1031</span>
+          <span class="journal">IEEE Latin America Transactions, 21(9), 1022–1031 · <a href="https://doi.org/10.1109/tla.2023.10251809" target="_blank">DOI</a></span>
         </li>
         <li class="pub-item">
           <span class="year-badge">2022</span>
           <span class="authors">J.A.D. Massignan, J.B.A. London Jr., <strong>M. Bessani</strong>, C.D. Maciel, R.Z. Fannucchi, V. Miranda</span>
           <div class="title">Bayesian Inference Approach for Information Fusion in Distribution System State Estimation</div>
-          <span class="journal">IEEE Transactions on Smart Grid, 13(1), 526–540</span>
+          <span class="journal">IEEE Transactions on Smart Grid, 13(1), 526–540 · <a href="https://doi.org/10.1109/tsg.2021.3128053" target="_blank">DOI</a></span>
         </li>
         <li class="pub-item">
           <span class="year-badge">2020</span>
           <span class="authors"><strong>M. Bessani</strong>, J.A.D. Massignan, T.M.O. Santos, J.B.A. London Jr., C.D. Maciel</span>
           <div class="title">Multiple Households Very Short-Term Load Forecasting Using Bayesian Networks</div>
-          <span class="journal">Electric Power Systems Research, 189, 106733</span>
+          <span class="journal">Electric Power Systems Research, 189, 106733 · <a href="https://doi.org/10.1016/j.epsr.2020.106733" target="_blank">DOI</a></span>
         </li>
         <li class="pub-item">
           <span class="year-badge">2019</span>
           <span class="authors"><strong>M. Bessani</strong>, J.A.D. Massignan, R.Z. Fanucchi, M.H.M. Camillo, J.B.A. London Jr., A.C.B. Delbem, C.D. Maciel</span>
           <div class="title">Probabilistic Assessment of Power Distribution Systems Resilience Under Extreme Weather</div>
-          <span class="journal">IEEE Systems Journal, 13(2), 1747–1756</span>
+          <span class="journal">IEEE Systems Journal, 13(2), 1747–1756 · <a href="https://doi.org/10.1109/JSYST.2018.2853554" target="_blank">DOI</a></span>
         </li>
         <li class="pub-item">
           <span class="year-badge">2019</span>
           <span class="authors">T.J. Gross, <strong>M. Bessani</strong>, W. Darwin Jr., R.B. Araújo, F.A.C. Vale, C.D. Maciel</span>
           <div class="title">An Analytical Threshold for Combining Bayesian Networks</div>
-          <span class="journal">Knowledge-Based Systems, 175, 36–49</span>
+          <span class="journal">Knowledge-Based Systems, 175, 36–49 · <a href="https://doi.org/10.1016/j.knosys.2019.03.014" target="_blank">DOI</a></span>
         </li>
         <li class="pub-item">
           <span class="year-badge">2018</span>
           <span class="authors">T.J. Gross, R.B. Araújo, F.A.C. Vale, <strong>M. Bessani</strong>, C.D. Maciel</span>
           <div class="title">Dependence between cognitive impairment and metabolic syndrome applied to a Brazilian elderly dataset</div>
-          <span class="journal">Artificial Intelligence in Medicine, 90, 53–60</span>
+          <span class="journal">Artificial Intelligence in Medicine, 90, 53–60 · <a href="https://doi.org/10.1016/j.artmed.2018.07.003" target="_blank">DOI</a></span>
         </li>
       </ul>
       <p style="margin-top:1rem">
