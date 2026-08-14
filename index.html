@@ -213,6 +213,90 @@
     .visitor-badge{display:none;margin-top:.75rem;font-size:.75rem;color:#888;animation:fadeIn .6s ease}
     .visitor-badge.visible{display:block}
     @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+    /* Hero tagline */
+    .hero .tagline{font-size:1rem;color:#0072f5;font-weight:500;margin-bottom:1.5rem;letter-spacing:-.01em}
+
+    /* Hero stats */
+    .hero-stats{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+    .hero-stat{text-align:center}
+    .hero-stat .num{font-family:'Geist Mono',monospace;font-size:1.75rem;font-weight:600;color:#171717;line-height:1}
+    .hero-stat .lbl{font-size:.75rem;color:#808080;margin-top:.25rem}
+
+    /* Currently working */
+    .cw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
+    .cw-card{padding:1.25rem;border-radius:8px;box-shadow:0 0 0 1px rgba(0,0,0,.08);border-left:3px solid #0072f5}
+    .cw-card .cw-title{font-size:.9375rem;font-weight:600;color:#171717;margin-bottom:.25rem}
+    .cw-card .cw-desc{font-size:.8125rem;color:#666;line-height:1.5}
+    .cw-card .cw-status{display:inline-block;font-size:.6875rem;font-weight:500;padding:.125rem .5rem;border-radius:9999px;margin-top:.5rem}
+    .cw-status.active{background:#dcfce7;color:#166534}
+    .cw-status.planning{background:#fef3c7;color:#92400e}
+
+    /* Vagas box */
+    .vagas-box{background:#f0f4ff;border-radius:8px;padding:1.5rem;margin-top:1.5rem}
+    .vagas-box h4{color:#0043ce;margin-bottom:.5rem}
+    .vagas-box ul{list-style:none;padding:0}
+    .vagas-box li{font-size:.875rem;color:#4d4d4d;padding:.25rem 0;padding-left:1.25rem;position:relative}
+    .vagas-box li::before{content:'→';position:absolute;left:0;color:#0072f5}
+
+    /* Dark toggle */
+    .dark-toggle{
+      background:none;border:1px solid rgba(0,0,0,.1);border-radius:6px;
+      font-size:.875rem;cursor:pointer;padding:.375rem .625rem;
+      color:#4d4d4d;transition:all .15s;line-height:1
+    }
+    .dark-toggle:hover{border-color:rgba(0,0,0,.2);color:#171717}
+
+    /* Dark mode */
+    [data-theme="dark"]{color:#e5e5e5;background:#0a0a0a}
+    [data-theme="dark"] a{color:#5b9bf5}
+    [data-theme="dark"] a:hover{color:#7db4ff}
+    [data-theme="dark"] p{color:#a3a3a3}
+    [data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3,[data-theme="dark"] h4{color:#f5f5f5}
+    [data-theme="dark"] .subtitle{color:#a3a3a3}
+    [data-theme="dark"] .affiliation{color:#737373}
+    [data-theme="dark"] .affiliation a{color:#a3a3a3}
+    [data-theme="dark"] nav{background:rgba(10,10,10,.92);box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+    [data-theme="dark"] nav .logo{color:#f5f5f5}
+    [data-theme="dark"] nav .logo span{color:#737373}
+    [data-theme="dark"] nav .nav-links a{color:#a3a3a3}
+    [data-theme="dark"] nav .nav-links a:hover{color:#f5f5f5;background:rgba(255,255,255,.06)}
+    [data-theme="dark"] .mobile-menu-btn{color:#f5f5f5}
+    [data-theme="dark"] nav .nav-links.open{background:#0a0a0a;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+    [data-theme="dark"] section+section{box-shadow:0 -1px 0 0 rgba(255,255,255,.06)}
+    [data-theme="dark"] .section-label{color:#737373}
+    [data-theme="dark"] .badge{background:rgba(0,114,245,.15);color:#5b9bf5}
+    [data-theme="dark"] .area-card,[data-theme="dark"] .project-card,[data-theme="dark"] .course-card,[data-theme="dark"] .stat-card,[data-theme="dark"] .link-card,[data-theme="dark"] .contact-item{box-shadow:0 0 0 1px rgba(255,255,255,.08);background:#141414}
+    [data-theme="dark"] .area-card:hover,[data-theme="dark"] .project-card:hover{box-shadow:0 0 0 1px rgba(255,255,255,.08),0 8px 8px -8px rgba(0,0,0,.5)}
+    [data-theme="dark"] .area-card p,[data-theme="dark"] .project-card p,[data-theme="dark"] .course-card p{color:#a3a3a3}
+    [data-theme="dark"] .project-card .tag{background:rgba(0,104,214,.15);color:#5b9bf5}
+    [data-theme="dark"] .project-card .period{color:#737373}
+    [data-theme="dark"] .pub-item{box-shadow:0 -1px 0 0 rgba(255,255,255,.06)}
+    [data-theme="dark"] .pub-item .authors{color:#737373}
+    [data-theme="dark"] .pub-item .title{color:#e5e5e5}
+    [data-theme="dark"] .pub-item .journal{color:#a3a3a3}
+    [data-theme="dark"] .year-badge{background:rgba(255,255,255,.08);color:#a3a3a3}
+    [data-theme="dark"] .stat-card .number{color:#f5f5f5}
+    [data-theme="dark"] .stat-card .label{color:#737373}
+    [data-theme="dark"] .link-card{color:#e5e5e5}
+    [data-theme="dark"] .link-card:hover{color:#f5f5f5}
+    [data-theme="dark"] .contact-item .label{color:#737373}
+    [data-theme="dark"] .contact-item .value{color:#e5e5e5}
+    [data-theme="dark"] .hero-stat .num{color:#f5f5f5}
+    [data-theme="dark"] .hero-stat .lbl{color:#737373}
+    [data-theme="dark"] .cw-card{background:#141414;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+    [data-theme="dark"] .cw-card .cw-title{color:#f5f5f5}
+    [data-theme="dark"] .cw-card .cw-desc{color:#a3a3a3}
+    [data-theme="dark"] .vagas-box{background:rgba(0,114,245,.08)}
+    [data-theme="dark"] .vagas-box h4{color:#5b9bf5}
+    [data-theme="dark"] .vagas-box li{color:#a3a3a3}
+    [data-theme="dark"] footer{box-shadow:0 -1px 0 0 rgba(255,255,255,.06)}
+    [data-theme="dark"] footer p{color:#737373}
+    [data-theme="dark"] .caption{color:#525252}
+    [data-theme="dark"] .dark-toggle{border-color:rgba(255,255,255,.12);color:#a3a3a3}
+    [data-theme="dark"] .dark-toggle:hover{border-color:rgba(255,255,255,.2);color:#f5f5f5}
+    [data-theme="dark"] .btn-ghost{color:#e5e5e5;border-color:rgba(255,255,255,.12)}
+    [data-theme="dark"] .btn-ghost:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2)}
   </style>
 </head>
 <body>
@@ -233,6 +317,7 @@
           <button onclick="setLang('pt')" id="langPt" class="active">PT</button>
           <button onclick="setLang('en')" id="langEn">EN</button>
         </div>
+        <button class="dark-toggle" onclick="toggleTheme()" id="themeToggle" aria-label="Toggle theme">🌙</button>
       </div>
       <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
     </div>
@@ -247,6 +332,8 @@
       <h1>Michel Bessani</h1>
       <p class="subtitle lang-pt">Professor e Pesquisador · Engenharia Elétrica · Otimização sob Incerteza · Inteligência Artificial Bayesiana</p>
       <p class="subtitle lang-en">Professor and Researcher · Electrical Engineering · Optimization under Uncertainty · Bayesian AI</p>
+      <p class="tagline lang-pt">Construindo sistemas resilientes sob incerteza</p>
+      <p class="tagline lang-en">Building resilient systems under uncertainty</p>
       <p class="affiliation">
         <a href="https://dee.ufmg.br" target="_blank">DEE · UFMG</a> ·
         <a href="https://orcslab.github.io" target="_blank">ORCS Lab</a>
@@ -256,6 +343,43 @@
         <a href="#contato" class="btn btn-primary lang-en">📬 Get in touch</a>
         <a href="http://lattes.cnpq.br/9450846955939545" target="_blank" class="btn btn-ghost">Currículo Lattes</a>
         <a href="https://scholar.google.com.br/citations?user=btaJnpEAAAAJ" target="_blank" class="btn btn-ghost">Google Scholar</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">28</div><div class="lbl lang-pt">artigos publicados</div><div class="lbl lang-en">publications</div></div>
+        <div class="hero-stat"><div class="num">52</div><div class="lbl lang-pt">trabalhos em conferências</div><div class="lbl lang-en">conference papers</div></div>
+        <div class="hero-stat"><div class="num">22</div><div class="lbl lang-pt">orientandos</div><div class="lbl lang-en">students supervised</div></div>
+        <div class="hero-stat"><div class="num">8+</div><div class="lbl lang-pt">anos na UFMG</div><div class="lbl lang-en">years at UFMG</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRENTLY WORKING ON -->
+  <section id="em-andamento">
+    <div class="container">
+      <p class="section-label lang-pt">Em andamento</p>
+      <p class="section-label lang-en">Currently working on</p>
+      <div class="cw-grid">
+        <div class="cw-card">
+          <div class="cw-title lang-pt">Resiliência de Sistemas de Distribuição</div>
+          <div class="cw-title lang-en">Distribution System Resilience</div>
+          <div class="cw-desc lang-pt">Modelos de otimização estocástica para tomada de decisão em eventos extremos em redes de distribuição de energia elétrica.</div>
+          <div class="cw-desc lang-en">Stochastic optimization models for decision-making under extreme events in power distribution networks.</div>
+          <div class="cw-status active">● Ativo</div>
+        </div>
+        <div class="cw-card">
+          <div class="cw-title lang-pt">Redes Bayesianas para Saúde do Trabalhador</div>
+          <div class="cw-title lang-en">Bayesian Networks for Worker Health</div>
+          <div class="cw-desc lang-pt">Previsão de risco de doença coronária usando redes bayesianas e dados de exposição ocupacional (projeto Petrobras/ANP).</div>
+          <div class="cw-desc lang-en">Coronary artery disease risk prediction using Bayesian networks and occupational exposure data (Petrobras/ANP project).</div>
+          <div class="cw-status active">● Ativo</div>
+        </div>
+        <div class="cw-card">
+          <div class="cw-title lang-pt">Planejamento Energético com ODS</div>
+          <div class="cw-title lang-en">Energy Planning with SDGs</div>
+          <div class="cw-desc lang-pt">Integração de Objetivos de Desenvolvimento Sustentável em modelos de planejamento de sistemas energéticos.</div>
+          <div class="cw-desc lang-en">Integrating Sustainable Development Goals into energy system planning models.</div>
+          <div class="cw-status planning">◌ Planejamento</div>
+        </div>
       </div>
     </div>
   </section>
@@ -320,6 +444,19 @@
         <span class="badge">🌱 Transição Energética</span>
         <span class="badge">🏥 Saúde e Tecnologia</span>
         <span class="badge">🇧🇷 SBIA</span>
+      </div>
+
+      <div class="vagas-box">
+        <h4 class="lang-pt">🎓 Procurando Orientandos</h4>
+        <h4 class="lang-en">🎓 Looking for Students</h4>
+        <ul>
+          <li class="lang-pt">2 vagas de Doutorado (PPGEE — Otimização)</li>
+          <li class="lang-en">2 Ph.D. positions (PPGEE — Optimization)</li>
+          <li class="lang-pt">6 vagas de Mestrado (PPGEE — Otimização)</li>
+          <li class="lang-en">6 M.Sc. positions (PPGEE — Optimization)</li>
+          <li class="lang-pt">Iniciação Científica e TCC — entre em contato</li>
+          <li class="lang-en">Undergraduate research — get in touch</li>
+        </ul>
       </div>
 
       <div class="stats-grid fade-in">
@@ -750,6 +887,22 @@
         }
       })
       .catch(() => {});
+
+    // Dark mode toggle
+    function toggleTheme(){
+      const d=document.documentElement;
+      const next=d.getAttribute('data-theme')==='dark'?'light':'dark';
+      d.setAttribute('data-theme',next);
+      document.getElementById('themeToggle').textContent=next==='dark'?'☀️':'🌙';
+      try{localStorage.setItem('site-theme',next)}catch(e){}
+    }
+    try{
+      const t=localStorage.getItem('site-theme');
+      if(t==='dark'||t==='light'){
+        document.documentElement.setAttribute('data-theme',t);
+        document.getElementById('themeToggle').textContent=t==='dark'?'☀️':'🌙';
+      }
+    }catch(e){}
   </script>
 </body>
 </html>
