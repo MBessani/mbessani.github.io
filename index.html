@@ -891,15 +891,15 @@
     const obs=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
     document.querySelectorAll('.fade-in').forEach(e=>obs.observe(e));
 
-    // Visitor counter (hidden until 130 visits) — CounterAPI v2
+    // Visitor counter (hidden until 130 visits) — countapi.mileshilliard.com
     const THRESHOLD = 130;
-    const API_BASE = 'https://api.counterapi.dev/v2/michel-bessanis-team-4638/pageview-githubio';
-    const API_KEY = 'ut_u8yjBrEDCWGL1zH2eh6jIy6MH6Pci4yDTfDFusli';
+    const VISITS_KEY = 'mbessani-site-visits';
+    const OFFSET = 46; // legacy count from CounterAPI v2
 
-    fetch(`${API_BASE}/up`, { headers: { 'Authorization': `Bearer ${API_KEY}` } })
+    fetch(`https://countapi.mileshilliard.com/api/v1/hit/${VISITS_KEY}`)
       .then(r => r.json())
       .then(d => {
-        const count = d.data.up_count;
+        const count = (d.value || 0) + OFFSET;
         document.getElementById('visitor-count').textContent = count;
         document.getElementById('visitor-count-en').textContent = count;
         if (count >= THRESHOLD) {
