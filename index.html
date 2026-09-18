@@ -899,7 +899,7 @@
     const VISITS_KEY = 'mbessani-site-visits';
     const OFFSET = 46; // legacy count from CounterAPI v2
 
-    fetch(`https://countapi.mileshilliard.com/api/v1/hit/${VISITS_KEY}`)
+    fetch(`https://countapi.mileshilliard.com/api/v1/hit/${VISITS_KEY}?_t=${Date.now()}`)
       .then(r => r.json())
       .then(d => {
         const count = (d.value || 0) + OFFSET;
